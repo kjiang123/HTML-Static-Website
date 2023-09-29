@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="name">Enter your name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="score">Enter your score from 1-10:</label><br>
+        <input type="number" id="score" name="score">
+    </form>
+    <br>
+    <input type="button" id="submit" value="Enter">
+    <br>
+    <p class="output" id="output"></p>
+    <br>
+    <a href="Homepage.html">Back</a>
+
+    <script>
+        const txt1 = document.getElementById('name');
+        const score1 = document.getElementById('score');
+        const btn1 = document.getElementById('submit');
+        const out1 = document.getElementById('output');
+
+        function fun1() {
+            const nameValue = txt1.value;
+            const scoreValue = parseInt(score1.value); // Parse the score as an integer
+
+            //using if statements based on the score
+            if (scoreValue >= 8) {
+                out1.innerHTML = `${nameValue}, Thank you for rating my website so good bro`;
+            } else if (scoreValue >= 5) {
+                out1.innerHTML = `${nameValue}, better than nothing I guess`;
+            } else if (scoreValue >=0) {
+                out1.innerHTML = `${nameValue}, You are a big meanie :(`;
+            } else {
+                out1.innerHTML = `${nameValue}, You cannot follow instructions `;
+            }
+        }
+
+        btn1.addEventListener('click', fun1);
+    </script>
+</body>
+</html>
